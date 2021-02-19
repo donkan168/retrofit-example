@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'co.com.mauricio'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/snapshot' }
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation('com.squareup.retrofit2:retrofit:2.4.0')
+	implementation('com.google.code.gson:gson:2.6.2')
+	implementation('com.squareup.retrofit2:converter-gson:2.1.0')
+
+	annotationProcessor("org.projectlombok:lombok")
+	implementation("org.projectlombok:lombok")
+	testCompile("org.projectlombok:lombok")
+
+	runtimeOnly("org.springframework.boot:spring-boot-devtools")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	
+	
+}
